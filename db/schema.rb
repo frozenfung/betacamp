@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141024044301) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gender"
-    t.string   "class"
+    t.string   "student_class"
     t.integer  "status"
   end
 
