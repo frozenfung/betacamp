@@ -1,12 +1,4 @@
 <%= form_for @student, :url => student_path(@student) do |s| %>
-  <%= s.label :name, "Name" %>
-  <%= s.text_field :name %>
-  <%= s.radio_button :gender, "boy", :check => true %>
-  <%= s.label :gender_boy, 'Boy' %>
-  <%= s.radio_button :gender, "girl" %>
-  <%= s.label :gender_girl, 'Girl' %>
-  <%= s.label :student_class, "Class" %>
-  <%= s.text_field :student_class %>
-  <%= s.select :status, (0..1) %>
+  <%= render :partial => 'form', :locals => {:s => s} %>
   <%= s.submit "Update" %>
 <% end %>
