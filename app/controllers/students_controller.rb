@@ -1,9 +1,9 @@
 class StudentsController < ApplicationController
 
-before_action :set_student, only => [:show, :edit, :update, :destroy]
+before_action :set_student, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @students = Student.all
+    @students = Student.page(params[:page]).per(5)
   end
 
   def show
@@ -36,6 +36,11 @@ before_action :set_student, only => [:show, :edit, :update, :destroy]
 
     redirect_to students_path
 
+  end
+
+
+  def set_student
+    @student = Student.find(params[:id])
   end
 
   def student_params
