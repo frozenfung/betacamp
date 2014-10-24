@@ -1,4 +1,19 @@
 
-<%= @student.name %>
+<div></div>
 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Class</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td><%= @student.name %></td>
+    <td><%= @student.gender %></td>
+    <td><%= @student.class %></td>
+    <td><%= @student.status %></td>
+  </tr>
+
+</table>
 <%= link_to 'back', students_path %>
