@@ -1,4 +1,5 @@
 <%= form_for @student, :url => student_path(@student) do |s| %>
   <%= render :partial => 'form', :locals => {:s => s} %>
-  <%= s.submit "Update" %>
+  <%= s.submit "Update", :class => 'btn btn-warning' %>
+  <%= link_to "Back", students_path, :class => 'btn btn-default' %>
 <% end %>

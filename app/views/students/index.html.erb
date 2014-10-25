@@ -8,14 +8,15 @@
   <% @students.each do |student| %>
     <tr>
       <td>
-        <%= student.id %>
+        <h4><%= student.id %></h4>
       </td>
       <td>
-        <%= link_to student.name, student_path(student) %>
+        <h4><%= student.name %></h4>
       </td>
       <td>
-        <%= link_to 'EDIT', edit_student_path(student), :class=>"btn btn-default" %>
-        <%= link_to 'DELETE', student_path(student), :method => :delete, :class=>"btn btn-default" %> 
+        <%= link_to 'INFO', student_path(student), :class=>"btn btn-info" %>
+        <%= link_to 'EDIT', edit_student_path(student), :class=>"btn btn-warning" %>
+        <%= link_to 'DELETE', student_path(student), :method => :delete, :class=>"btn btn-danger" %> 
       </td>
     </tr>
   <% end %>

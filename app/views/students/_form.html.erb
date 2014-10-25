@@ -5,13 +5,52 @@
     <% end %>
   </ul>
 <% end %>
+<table class='table table-bordered col-md-12'>
+<tr class="form-group">
+  <td class='col-sm-2'>
+    <%= s.label :name, "Name"%>
+  </td>
+  <td>
+    <div class="col-xs-3">
+    <%= s.text_field :name, :class => 'form-control', :placeholder => 'Name' %>
+    </div>
+  </td>
+</tr>
 
-<%= s.label :name, "Name" %>
-<%= s.text_field :name %>
-<%= s.radio_button :gender, "boy", :check => true %>
-<%= s.label :gender_boy, 'Boy' %>
-<%= s.radio_button :gender, "girl" %>
-<%= s.label :gender_girl, 'Girl' %>
-<%= s.label :student_class, "Class" %>
-<%= s.text_field :student_class %>
-<%= s.select :status, (0..1) %>
+<tr class="form-group">
+  <td class='col-sm-2'>
+    <%= s.label :gender, "Gender" %>
+  </td>
+  <td>
+    <div class="col-xs-3">
+      <%= s.radio_button :gender, "boy", :check => true %>
+      <%= s.label :gender_boy, 'Boy' %>
+      <%= s.radio_button :gender, "girl" %>
+      <%= s.label :gender_girl, 'Girl' %>
+    </div>
+  </td>
+</tr>
+
+<tr class="form-group">
+  <td class='col-sm-2'>
+    <%= s.label :student_class %>
+  </td>
+  <td>
+    <div class="col-xs-3">
+    <%= s.text_field :student_class, :class => 'form-control', :placeholder => 'Which class is he/she in?' %>
+    </div>
+  </td>
+</tr>
+
+<tr class="form-group">
+  <td class='col-sm-2'>
+    <%= s.label :status, "Status" %>
+  </td>
+  <td>
+    <div class="col-xs-3">
+      <%= s.select :status, (0..1), :class => 'form-control' %>
+    </div>
+  </td>
+</tr>
+
+</table>
