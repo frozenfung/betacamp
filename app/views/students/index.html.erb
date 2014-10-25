@@ -1,25 +1,27 @@
-<div><%= link_to 'New Student', new_student_path %></div>
+<div><%= link_to 'New Student', new_student_path, :class=>"btn btn-default" %></div>
 
 <br>
 <br>
 
-<table>
-  <tr><th>Name</th></tr>
+<table class='table table-hover table-bordered'>
+  <tr><th>No.</th><th>Name</th><th>Operation</th></tr>
   <% @students.each do |student| %>
     <tr>
+      <td>
+        <%= student.id %>
+      </td>
       <td>
         <%= link_to student.name, student_path(student) %>
       </td>
       <td>
-        <%= link_to 'EDIT', edit_student_path(student) %>
-      </td>
-      <td>
-        <%= link_to 'DELETE', student_path(student), :method => :delete %> 
+        <%= link_to 'EDIT', edit_student_path(student), :class=>"btn btn-default" %>
+        <%= link_to 'DELETE', student_path(student), :method => :delete, :class=>"btn btn-default" %> 
       </td>
     </tr>
   <% end %>
-  <tr><td><%= paginate @students %></td></tr>
 </table>
+<h3><%= paginate @students %></h3>
+
 
 
 
