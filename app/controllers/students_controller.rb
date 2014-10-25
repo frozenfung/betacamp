@@ -4,6 +4,7 @@ before_action :set_student, :only => [:show, :edit, :update, :destroy]
 
   def index
     @students = Student.page(params[:page]).per(5)
+    @student = Student.new
   end
 
   def show
@@ -11,7 +12,6 @@ before_action :set_student, :only => [:show, :edit, :update, :destroy]
   end
 
   def new
-    @student = Student.new
   end
 
   def create
@@ -20,7 +20,7 @@ before_action :set_student, :only => [:show, :edit, :update, :destroy]
       flash[:create_success] = @student.name + ' is added Successfully!'
       redirect_to students_path
     else
-      render :action => :new
+      redirect_to students_path
     end
   end
 

@@ -1,4 +1,4 @@
-<div><%= link_to 'New Student', new_student_path, :class=>"btn btn-default" %></div>
+
 
 <br>
 <br>
@@ -22,7 +22,11 @@
   <% end %>
 </table>
 <h3><%= paginate @students %></h3>
-
-
-
+<h2>Add Student</h2>
+<%= form_for @student, :url => students_path do |s| %>
+  <%= render :partial => 'form', :locals => {:s => s} %>
+  <%= s.submit "Create", :class => 'btn btn-default' %>
+<% end %>
+<br>
+<br>
 
