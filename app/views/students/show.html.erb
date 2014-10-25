@@ -1,14 +1,15 @@
 
 <div style="color:#99f"><%=flash[:update_success]%></div>
 
-<table>
-  <tr>
+
+<table class='table table-bordered'>
+  <tr class="active">
     <th>Name</th>
     <th>Gender</th>
     <th>Class</th>
     <th>Status</th>
   </tr>
-  <tr>
+  <tr class='success'>
     <td><%= @student.name %></td>
     <td><%= @student.gender %></td>
     <td><%= @student.student_class %></td>
@@ -16,4 +17,4 @@
   </tr>
 
 </table>
-<%= link_to 'back', students_path %>
+<%= link_to 'back', students_path, :class => 'btn btn-default' %>
